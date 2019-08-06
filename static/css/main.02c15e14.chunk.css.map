@@ -1,1 +1,0 @@
-{"version":3,"sources":["card.css"],"names":[],"mappings":"AAAA,IACI,gBAAiB,CACjB,SAAU,CACV,UACJ,CAEA,GACI,aACJ,CAEA,EACI,aACJ","file":"main.02c15e14.chunk.css","sourcesContent":["img {\r\n    object-fit: cover;\r\n    width: 50%;\r\n    height: 50%;\r\n}\r\n\r\nh6 {\r\n    font-size: 80%;\r\n}\r\n\r\np {\r\n    font-size: 70%;\r\n}"]}
