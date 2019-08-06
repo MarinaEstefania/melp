@@ -44,11 +44,11 @@ export class MapContainer extends Component {
         <Marker
           onClick={this.onMarkerClick}
           name={i.name}
-          position={{ lat: i.north, lng: i.west }}
+          position={{ lat: i.address.location.lat, lng: i.address.location.lng }}
           key={i.id}
-          info= {i.description}
+          info= {i.shortDescription}
           category = {i.category}
-          price = { i.price}
+          price = { i.avgPrice}
         />
       )
     });

@@ -1,18 +1,16 @@
 import React, { Component } from "react";
-import data from "../data/data.json";
 
 class Search extends Component {
  constructor(props) {
    super(props);
    {
      this.state = {
-       dataFiltered: data
+       places: []
      };
    }
  }
 
- dataToArray = Object.values(data)
-
+/* 
 // function for dynamic sorting
 compareValues(key, order='asc') {
   return function(a, b) {
@@ -36,33 +34,31 @@ compareValues(key, order='asc') {
           (order == 'desc') ? (comparison * -1) : comparison
       );
   };
-}
+} */
 
 
  handleChange = event => {
-   
-  let found =  data.restaurants.filter(i =>
-    new RegExp(this.state.search, "i").exec(JSON.stringify(i))
-  );
-
-
-   this.setState({
-     search: event.target.value,
-     dataFiltered: found
-   });
+  const value = event.target.value;
 
    
-   this.props.eventSearch(found);
+   this.props.eventSearch(value);
  };
+
+
+ 
+
+
+
  render() {
    //console.log(this.state.dataFiltered);
-   console.log(this.dataToArray[0].sort(this.compareValues('raiting','desc')));
+  /*  const sortedPlaces = [...this.state.places.sort(this.compareValues('raiting','desc'))]
+   this.state.places.sort(this.compareValues('raiting','desc')); */
    return (
      <div className="searchBar">
        <input
          type="text"
          placeholder="Search.."
-         value={this.state.search}
+         value={this.props.searchQuery}
          onChange={this.handleChange}
        />
      </div>

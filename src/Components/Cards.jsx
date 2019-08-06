@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../style/card.css';
-import data from '../data/data.json';
 import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
 // import './index.css';
 
@@ -27,11 +26,11 @@ class Cards extends Component {
                 </MDBCol>
                 <MDBCol size="6" xs="6">
                   <h6>{item.name}</h6>
-                  <p>{item.description}</p>
+                  <p>{item.shortDescription}</p>
                 </MDBCol>
                 <MDBCol size="2" xs="2">
-                  <span>{item.raiting}</span> <br />
-                  <span>${item.price}</span>
+                  <span>{item.rating}</span> <br />
+                  <span>${item.avgPrice}</span>
                 </MDBCol>
               </MDBRow>
             </div>
