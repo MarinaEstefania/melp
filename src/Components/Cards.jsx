@@ -8,7 +8,7 @@ class Cards extends Component {
   
 
   render() {
-    console.log(this.props.data);
+    //console.log(this.props.data);
     const data = (Array.isArray(this.props.data))? this.props.data : this.props.data.restaurants;
     return (
       <div>
