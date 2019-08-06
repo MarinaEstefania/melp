@@ -13,19 +13,30 @@ class Search extends Component {
 
  dataToArray = Object.values(data)
 
- compare = (a, b) => {
-   const raitingA = a.raiting;
-   const raitingB = b.raiting;
-   console.log(raitingA, raitingB)
+// function for dynamic sorting
+compareValues(key, order='asc') {
+  return function(a, b) {
+      if(!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+          // property doesn't exist on either object
+          return 0;
+      }
 
-   let comparison = 0;
-   if (raitingA > raitingB){
-     comparison = 1;
-   } else if (raitingA < raitingB){
-     comparison = -1;
-   }
-   return comparison
- }
+      const varA = (typeof a[key] === 'string') ?
+          a[key].toUpperCase() : a[key];
+      const varB = (typeof b[key] === 'string') ?
+          b[key].toUpperCase() : b[key];
+
+      let comparison = 0;
+      if (varA > varB) {
+          comparison = 1;
+      } else if (varA < varB) {
+          comparison = -1;
+      }
+      return (
+          (order == 'desc') ? (comparison * -1) : comparison
+      );
+  };
+}
 
 
  handleChange = event => {
@@ -45,7 +56,7 @@ class Search extends Component {
  };
  render() {
    //console.log(this.state.dataFiltered);
-   console.log(this.dataToArray.sort(this.compare))
+   console.log(this.dataToArray[0].sort(this.compareValues('raiting','desc')));
    return (
      <div className="searchBar">
        <input
