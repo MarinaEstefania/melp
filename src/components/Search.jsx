@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 import data from "../data/data.json";
 
 class Search extends Component {
@@ -70,3 +71,37 @@ compareValues(key, order='asc') {
  }
 }
 export default Search;
+=======
+import "../style/main.css";
+
+class Search extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      places: []
+    };
+  }
+
+  handleChange = event => {
+    const value = event.target.value;
+
+    this.props.eventSearch(value);
+  };
+
+  render() {
+    //console.log(this.state.dataFiltered);
+    return (
+      <div className="searchinput">
+        <input
+          className="searchinput"
+          type="text"
+          placeholder="Search.."
+          value={this.props.searchQuery}
+          onChange={this.handleChange}
+        />
+      </div>
+    );
+  }
+}
+export default Search;
+>>>>>>> 40d442bdb28b0462600183e65845eff47e80cf14
