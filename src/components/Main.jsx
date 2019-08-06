@@ -27,7 +27,7 @@ handlerSearch = (found) =>{
 }
 
  render() {
- console.log(this.state.data)
+ //console.log(this.state.data)
    const isMap = this.state.isMap;
    let view;
    if (isMap){
